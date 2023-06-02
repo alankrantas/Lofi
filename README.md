@@ -11,12 +11,10 @@ A slightly modified version of [Lofi](https://github.com/jacbz/Lofi), a ML-power
 After downloading this repo, run the following command under the project root directory:
 
 ```bash
-docker-compose -d
+docker-compose up -d
 ```
 
-Then open ```http://localhost:8080```.
-
-(The server runs on ```http://localhost:3080```.)
+The client would be run on ```http://localhost:8080```. (Server APIs on ```http://localhost:3080```.)
 
 ## Stop Lofi
 

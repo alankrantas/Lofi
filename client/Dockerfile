@@ -13,9 +13,9 @@ WORKDIR /app
 
 COPY --from=builder /app/dist /app/dist
 COPY ./express /app
-RUN npm install express connect-history-api-fallback
-RUN npm prune
+
+RUN npm i -g http-server
 
 EXPOSE 8080
 
-CMD node server.js 0.0.0.0 8080
+CMD http-server ./dist -a 0.0.0.0 -p 8080
