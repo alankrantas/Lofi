@@ -7,14 +7,14 @@ from flask_limiter.util import get_remote_address
 
 from model.lofi2lofi_model import Decoder as Lofi2LofiDecoder
 from model.lyrics2lofi_model import Lyrics2LofiModel
-from server.lofi2lofi_generate import decode
-from server.lyrics2lofi_predict import predict
+from lofi2lofi_generate import decode
+from lyrics2lofi_predict import predict
 
 device = "cpu"
 app = Flask(__name__)
 limiter = Limiter(
-    app,
-    key_func=get_remote_address,
+    get_remote_address,
+    app=app,
     default_limits=["30 per minute"]
 )
 

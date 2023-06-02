@@ -1,0 +1,29 @@
+version: "3.9"
+
+networks:
+  default:
+    driver: bridge
+
+services:
+
+  client:
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+    container_name: lofi-client
+    restart: always
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    container_name: lofi-server
+    restart: always
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

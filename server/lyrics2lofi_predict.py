@@ -2,7 +2,7 @@ import torch
 from torch.nn.utils.rnn import pack_padded_sequence
 
 from model.embeddings import make_embedding
-from server.output import *
+from output import *
 
 
 def predict(model, input):

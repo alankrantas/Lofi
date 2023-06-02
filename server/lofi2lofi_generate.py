@@ -1,6 +1,6 @@
 import torch
 
-from server.output import *
+from output import *
 
 
 def decode(model, mu):

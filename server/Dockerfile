@@ -2,10 +2,14 @@ FROM python:3.8
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY ./server/requirements.txt /app/requirements.txt
 
-RUN pip3 install -r requirements.txt
+RUN pip3 --no-cache-dir install -r requirements.txt
 
-COPY . .
+COPY ./server /app
+COPY ./model /app/model
+COPY ./checkpoints /app/checkpoints
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+EXPOSE 3000
+
+CMD flask run -h 0.0.0.0 -p 3000
