@@ -14,7 +14,7 @@ After downloading this repo, run the following command under the project root di
 docker-compose up -d
 ```
 
-The client would be run on ```http://localhost:8080```. (Server APIs on ```http://localhost:3080```.)
+The client would be run on ```http://localhost:8080```. (The server APIs would be on ```http://localhost:3000```.)
 
 ## Stop Lofi
 
